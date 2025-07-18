@@ -1,0 +1,57 @@
+/* Portfolio Section */
+.portfolio-section {
+    padding: 60px 20px;
+    background-color: #F9F3EF;
+    text-align: center;
+}
+
+.portfolio-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.portfolio-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Slider Styles */
+.portfolio-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.slider-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 20%; /* Smaller size for inactive slides */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6; /* Dim inactive slides */
+    transform: scale(0.9); /* Shrink inactive slides */
+    cursor: pointer; /* Add pointer cursor for interactivity */
+}
+
+.slide.active {
+    flex: 0 0 40%; /* Larger size for the active slide */
+    opacity: 1; /* Highlight active slide */
+    transform: scale(1); /* Pop out active slide */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

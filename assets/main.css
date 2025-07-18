@@ -1,0 +1,309 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #F9F3EF;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif; /* Stylish and clean font for body text */
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Great Vibes', cursive; /* Elegant font for headings */
+    color: var(--gold);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+/* Other Text Styling */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Gold Color Scheme */
+:root {
+    --gold: #C78A3B;
+    --gold-light: #E0B878;
+    --gold-dark: #A5722A;
+    --dark: #2A2A2A;
+    --light: #FFFFFF;
+}
+
+/* Navigation Drawer - Right Side - Mobile Only */
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--light);
+    padding: 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: none;
+}
+
+.nav-drawer.open {
+    right: 0;
+}
+
+/* Menu Toggle Button - Hamburger Icon */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: var(--light);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: var(--gold-dark);
+}
+
+/* Main Navigation Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(249, 243, 239, 0.8); /* Fully transparent with slight white tint */
+    box-shadow: none; /* Remove shadow for a cleaner transparent look */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect for better readability */
+}
+
+.logo {
+    font-family: 'Great Vibes', cursive; /* Elegant font for the logo */
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    color: var(--gold); /* Use the gold color for a luxurious feel */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    letter-spacing: 2px; /* Add spacing between letters for a modern look */
+}
+
+.logo span {
+    display: inline-block;
+    transform: rotate(-5deg); /* Slight rotation for a playful touch */
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav a {
+    margin-left: 70px;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: var(--gold);
+}
+
+/* Main Content */
+.main-content {
+    padding: 90px 0px 20px;
+}
+
+/* Banner Section - Tight Layout */
+.banner-container {
+    position: relative;
+    width: 100%;
+    /* margin: 40px 0; */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.banner-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+
+.banner-text {
+    /* border: 1px solid red; */
+    flex: 1;
+    min-width: 50%;
+    padding: 50px 40px 0px 140px;
+    position: relative;
+    z-index: 2;
+    margin-top: -80px; /* Pulls the text upwards to overlap the image */
+}
+
+
+.banner-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+    max-width: 500px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--light);
+    padding: 14px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(199, 138, 59, 0.4);
+    font-size: 1.1rem;
+    border: 2px solid var(--gold);
+    border-radius: 34px 10px 34px 10px;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(199, 138, 59, 0.6);
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
+}
+
+/* Semi-circle Image - Overlap Enabled */
+.banner-image {
+    flex: 1;
+    min-width: 90%;
+    position: relative;
+    z-index: 1;
+    margin-left: -60px; /* Pulls image into text space */
+    /* border: 1px solid red; */
+}
+
+.semi-circle-image {
+    width: 600px;
+    height: 680px;
+    border-top-left-radius: 400px;
+    border-top-right-radius: 400px;
+    object-fit: cover;
+    /* border: 10px; */
+    /* border-bottom: 0; */
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+    /* max-width: 800px; */
+    /* margin-left: auto; */
+    margin-top: -100px; /* Pulls the image upwards to start from the navbar */
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 1024px) {
+    .banner-text {
+        padding-right: 20px;
+    }
+    
+    .banner-image {
+        margin-left: -50px;
+    }
+    
+    .semi-circle-image {
+        height: 350px;
+        border-top-left-radius: 350px;
+        border-top-right-radius: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-drawer {
+        display: block;
+    }
+    
+    .header-nav {
+        display: none;
+    }
+    
+    .banner-container {
+        min-height: auto;
+        margin: 60px 0;
+    }
+    
+    .banner-content {
+        flex-direction: column;
+    }
+    
+    .banner-text {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    
+    .banner-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .banner-image {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .semi-circle-image {
+        height: 250px;
+        border-top-left-radius: 250px;
+        border-top-right-radius: 250px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .banner-text p {
+        font-size: 1rem;
+    }
+    
+    .semi-circle-image {
+        height: 200px;
+        border-top-left-radius: 200px;
+        border-top-right-radius: 200px;
+    }
+}
