@@ -2,30 +2,85 @@
 .contact-section {
     padding: 60px 20px;
     background-color: #F9F3EF;
-    text-align: center;
-}
-
-.contact-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 20px;
-}
-
-.contact-description {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 40px;
 }
 
 .contact-container {
-    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Left Side: Contact Details */
+.contact-details {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.contact-details h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.contact-details p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.contact-info li {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 10px;
+    color: var(--gold);
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--gold);
+}
+
+/* Right Side: Contact Form */
+.contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
     background: white;
-    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-form-container h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
 }
 
 .contact-form .form-group {
@@ -58,7 +113,6 @@
 }
 
 .contact-btn {
-    display: inline-block;
     background: var(--gold);
     color: var(--light);
     padding: 12px 30px;
@@ -69,6 +123,8 @@
     box-shadow: 0 4px 15px rgba(199, 138, 59, 0.4);
     font-size: 1.1rem;
     border: 2px solid var(--gold);
+    border-radius: 34px 10px 34px 10px;
+    float: right;
 }
 
 .contact-btn:hover {
