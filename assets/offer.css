@@ -1,9 +1,8 @@
 
 /* Our Offer Section */
-.our-offer {
-    background: url('images/rose.jpg') no-repeat center center/cover;
+.place-to-stay {
+    background: url('images/coimbra2.jpg') no-repeat center center/cover;
     /* padding: 60px 0px; */
-    color: white;
 }
 
 /* About Us Card */
@@ -77,4 +76,76 @@
 .offer-card p {
     font-size: 1rem;
     color: #666;
+}
+
+
+/* Offer List */
+.offer-list {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.offer-card {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+.offer-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--gold);
+}
+
+/* Additional Details */
+.places-section,
+.stay-section {
+    flex: 1 1;
+    padding: 10px;
+}
+
+.places-section h3,
+.stay-section h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.offer-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offer-info li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.offer-info li i {
+    margin-right: 10px;
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+/* Style for links in the offer-info list */
+.offer-info a {
+    color: var(--dark); /* Use your desired color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Optional: Add some weight for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.offer-info a:hover {
+    color: var(--gold-dark); /* Change color on hover */
+    text-decoration: underline; /* Optional: Add underline on hover */
 }

@@ -106,19 +106,46 @@ p {
     right: 0;
     z-index: 900;
     backdrop-filter: blur(10px); /* Optional: Adds a blur effect for better readability */
+    height: 90px;
 }
 
+/* Logo Styling */
 .logo {
-    font-family: 'Great Vibes', cursive; /* Elegant font for the logo */
-    font-size: 2.5rem; /* Larger font size for emphasis */
-    color: var(--gold); /* Use the gold color for a luxurious feel */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-    letter-spacing: 2px; /* Add spacing between letters for a modern look */
+    font-family: 'Great Vibes', cursive; /* Use the same font as h1 */
+    font-size: 4rem; /* Fixed size for emphasis */
+    color: var(--gold); /* Gold color for elegance */
+    position: relative;
+    display: inline-block;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    letter-spacing: -5px; /* Slight overlap between letters */
+    line-height: 1; /* Prevents extra spacing around the logo */
 }
 
-.logo span {
-    display: inline-block;
-    transform: rotate(-5deg); /* Slight rotation for a playful touch */
+.letter-g {
+    position: relative;
+    z-index: 2; /* Ensure G is above D */
+}
+
+.letter-d {
+    position: absolute;
+    top: 20px; /* Adjust vertical alignment */
+    left: 30px; /* Adjust horizontal alignment */
+    z-index: 1; /* Ensure D is behind G */
+    color: var(--gold-light); /* Slightly lighter gold for contrast */
+    transform: rotate(-5deg); /* Add a slight rotation for a playful touch */
+    opacity: 0.9; /* Slight transparency for blending */
+}
+
+/* Hover Effect */
+.logo:hover .letter-d {
+    transform: rotate(0deg) scale(1.1); /* Slight animation on hover */
+    opacity: 1; /* Fully visible on hover */
+    transition: all 0.3s ease;
+}
+
+.logo:hover .letter-g {
+    transform: scale(1.1); /* Slight scaling effect */
+    transition: all 0.3s ease;
 }
 
 .header-nav {
@@ -142,94 +169,370 @@ p {
     padding: 90px 0px 20px;
 }
 
-/* Banner Section - Tight Layout */
+
+
+/* Enhanced Banner Section - Spicy Wedding Design */
 .banner-container {
     position: relative;
     width: 100%;
-    /* margin: 40px 0; */
-    min-height: 400px;
+    min-height: 600px;
     display: flex;
     align-items: center;
+    padding: 100px 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff9f0 0%, #fff 100%);
 }
 
 .banner-content {
     display: flex;
     width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     align-items: center;
     position: relative;
+    padding: 0 40px;
 }
 
 .banner-text {
-    /* border: 1px solid red; */
     flex: 1;
     min-width: 50%;
-    padding: 50px 40px 0px 140px;
+    padding-right: 80px;
     position: relative;
-    z-index: 2;
-    margin-top: -80px; /* Pulls the text upwards to overlap the image */
+    z-index: 4;
 }
 
-
+/* Text Decoration */
 .banner-text h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
     color: var(--dark);
+    position: relative;
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.banner-text h1:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+.decoration-leaf {
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23d4af37" d="M50 0 Q70 20 50 40 Q30 20 50 0" opacity="0.3"/></svg>');
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: rotate(-15deg);
 }
 
 .banner-text p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #666;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    color: #555;
     max-width: 500px;
+    position: relative;
+    padding-left: 20px;
 }
 
-.cta-btn {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--light);
-    padding: 14px 35px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(199, 138, 59, 0.4);
-    font-size: 1.1rem;
-    border: 2px solid var(--gold);
-    border-radius: 34px 10px 34px 10px;
+.banner-text p:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--gold), var(--gold-light));
+    border-radius: 3px;
 }
 
-.cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(199, 138, 59, 0.6);
-    background: var(--gold-dark);
-    border-color: var(--gold-dark);
-}
-
-/* Semi-circle Image - Overlap Enabled */
+/* Enhanced Image Layers */
 .banner-image {
     flex: 1;
     min-width: 50%;
     position: relative;
-    z-index: 1;
-    margin-left: -301px; /* Pulls image into text space */
-    /* border: 1px solid red; */
-    margin-bottom: 0;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.semi-circle-image {
-    width: 600px;
-    height: 680px;
-    border-top-left-radius: 400px;
-    border-top-right-radius: 400px;
+.square-layered-image {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
     object-fit: cover;
-    border: 10px;
-    border-bottom: none;
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
-    max-width: 800px;
-    /* margin-left: auto; */
-    margin-top: -80px; /* Pulls the image upwards to start from the navbar */
-    margin-bottom: 0;
+    position: relative;
+    z-index: 4;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    border: 15px solid white;
+    transform: rotate(-5deg);
+    filter: sepia(10%) brightness(105%) contrast(105%);
+    transition: all 0.5s ease;
 }
+
+.square-layered-image:hover {
+    transform: rotate(-2deg) scale(1.02);
+    filter: sepia(0%) brightness(110%) contrast(100%);
+}
+
+.image-layer {
+    position: absolute;
+    border: 15px solid white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease;
+}
+
+.layer-1 {
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    transform: rotate(10deg) translate(30px, 30px);
+    background: var(--gold-light);
+    opacity: 0.8;
+}
+
+.layer-2 {
+    width: 500px;
+    height: 500px;
+    z-index: 2;
+    background: var(--gold);
+    transform: rotate(-5deg) translate(-25px, -25px);
+    opacity: 0.6;
+}
+
+.layer-3 {
+    width: 500px;
+    height: 500px;
+    z-index: 3;
+    background: linear-gradient(45deg, var(--gold-light), var(--gold));
+    transform: rotate(2deg) translate(15px, 15px);
+    opacity: 0.4;
+    border: 15px solid rgba(255,255,255,0.8);
+}
+
+.polaroid-effect {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 200px;
+    height: 200px;
+    background: white;
+    z-index: 5;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: rotate(15deg);
+    border: 10px solid white;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(110%);
+}
+
+/* Enhanced Button with Icon */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+    font-size: 1.1rem;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-btn i {
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.6);
+    background: var(--gold-dark);
+}
+
+.cta-btn:hover i {
+    transform: scale(1.2);
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.heart {
+    position: absolute;
+    background: var(--gold);
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    opacity: 0.6;
+}
+
+.heart:before, .heart:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -7.5px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -7.5px;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation: float 10s ease-in-out infinite 2s;
+    width: 12px;
+    height: 12px;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation: float 12s ease-in-out infinite 1s;
+    width: 18px;
+    height: 18px;
+}
+
+/* Gold Dust Particles */
+.gold-dust {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23d4af37" opacity="0.3"/><circle cx="30" cy="30" r="1.5" fill="%23d4af37" opacity="0.2"/><circle cx="70" cy="50" r="1" fill="%23d4af37" opacity="0.4"/><circle cx="80" cy="20" r="2" fill="%23d4af37" opacity="0.3"/><circle cx="40" cy="70" r="1" fill="%23d4af37" opacity="0.3"/></svg>');
+    background-size: 200px 200px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: rotate(45deg) translateY(-50px);
+        opacity: 0.9;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .banner-text h1 {
+        font-size: 3rem;
+    }
+    
+    .square-layered-image,
+    .layer-1,
+    .layer-2,
+    .layer-3 {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner-text {
+        padding-right: 0;
+        margin-bottom: 80px;
+    }
+    
+    .banner-text h1:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .banner-text p {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+    }
+    
+    .banner-text p:before {
+        display: none;
+    }
+    
+    .decoration-leaf {
+        left: 50%;
+        transform: translateX(-50%) rotate(-15deg);
+        top: -50px;
+    }
+    
+    .banner-image {
+        height: auto;
+        margin-top: 60px;
+    }
+    
+    .polaroid-effect {
+        right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .square-layered-image,
+    .layer-1,
+    .layer-2,
+    .layer-3 {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .polaroid-effect {
+        width: 150px;
+        height: 150px;
+        bottom: -20px;
+        right: -20px;
+    }
+}
+
 
 /* Responsive Design - Mobile */
 @media (max-width: 1024px) {
