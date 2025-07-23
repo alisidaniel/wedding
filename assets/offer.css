@@ -2,20 +2,18 @@
 /* Our Offer Section */
 .place-to-stay {
     background: url('images/coimbra2.jpg') no-repeat center center/cover;
-    /* padding: 60px 0px; */
+    padding: 100px 0px;
 }
 
 /* About Us Card */
 .about-card {
     background: white;
-    padding: 100px;
-    /* border-radius: 15px; */
-    /* margin-bottom: 40px; */
-    border-bottom-left-radius: 200px;
+    padding: 70px;
+    padding-top: -10px;
+    border-bottom-left-radius: 210px;
     max-width: 780px;
     margin-left: auto;
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
-    margin-top: 0;
+    margin-top: -10px;
 }
 
 .about-card h2 {
@@ -50,47 +48,20 @@
 }
 
 /* Offer Cards */
-.offer-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 80px 20px;
-}
-
-.offer-card {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.offer-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--dark);
-}
-
-.offer-card p {
-    font-size: 1rem;
-    color: #666;
-}
-
 
 /* Offer List */
 .offer-list {
     display: flex;
-    /* flex-wrap: wrap; */
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
     justify-content: center;
     margin-bottom: 40px;
+    padding-top: 80px;
 }
 
 .offer-card {
     flex: 1;
-    padding: 20px;
+    padding: 50px;
     background: white;
     border-radius: 10px;
     text-align: center;
@@ -99,7 +70,7 @@
 }
 
 .offer-card h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
     color: var(--gold);
 }
@@ -149,3 +120,212 @@
     color: var(--gold-dark); /* Change color on hover */
     text-decoration: underline; /* Optional: Add underline on hover */
 }
+
+
+
+/* Modern Story Section */
+.story-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(212,175,55,0.03) 0%, rgba(255,255,255,0) 100%);
+  }
+  
+  .story-card {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    position: relative;
+  }
+  
+  .story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(212,175,55,0.03) 0%, rgba(255,255,255,0) 100%);
+  }
+  
+  .story-content {
+    flex: 1;
+    padding: 80px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .section-label {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .story-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #222;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .story-title span {
+    color: #d4af37;
+    position: relative;
+  }
+  
+  .story-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(212,175,55,0.2);
+    z-index: -1;
+  }
+  
+  .timeline {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 6px;
+    height: 100%;
+    width: 2px;
+    background: #eee;
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 30px;
+    opacity: 0.6;
+    transition: all 0.4s ease;
+  }
+  
+  .timeline-item.active {
+    opacity: 1;
+  }
+  
+  .timeline-year {
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #d4af37;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px #d4af37;
+  }
+  
+  .timeline-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .story-excerpt {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #666;
+    margin: 40px 0;
+    font-style: italic;
+  }
+  
+  .story-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .story-btn:hover {
+    background: #d4af37;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212,175,55,0.2);
+  }
+  
+  .story-btn svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .story-btn:hover svg {
+    transform: translateX(5px);
+  }
+  
+  .story-images {
+    flex: 1;
+    position: relative;
+    min-height: 600px;
+  }
+  
+  .image-stack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image-1, .image-2 {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: all 0.5s ease;
+  }
+  
+  .image-1 {
+    width: 70%;
+    height: 60%;
+    top: 10%;
+    left: 10%;
+    z-index: 2;
+  }
+  
+  .image-2 {
+    width: 60%;
+    height: 50%;
+    bottom: 10%;
+    right: 10%;
+    z-index: 1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .story-card {
+      flex-direction: column;
+    }
+    
+    .story-content {
+      padding: 50px;
+    }
+    
+    .story-images {
+      min-height: 400px;
+    }
+  }

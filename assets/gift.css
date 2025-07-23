@@ -1,0 +1,234 @@
+/* Gift Registry Section */
+.gift-registry {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    text-align: center;
+    background: #fff9f7;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  
+  .registry-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .registry-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 30px;
+  }
+  
+  .divider {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #d4af37, #f4e5c2);
+    margin: 25px auto;
+  }
+  
+  .registry-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0;
+  }
+  
+  .gift-option {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gift-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+  }
+  
+  .gift-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #d4af37, #f4e5c2);
+  }
+  
+  .gift-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .gift-option h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .gift-option p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .gift-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #d4af37;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #d4af37;
+  }
+  
+  .gift-btn:hover {
+    background: #b38b2d;
+    border-color: #b38b2d;
+    transform: translateY(-2px);
+  }
+  
+  /* Special Elements for Each Option */
+  .honeymoon-fund {
+    border-top: 5px solid #4a90e2;
+  }
+  
+  .amazon-registry {
+    border-top: 5px solid #ff9900;
+  }
+  
+  .charity-fund {
+    border-top: 5px solid #e74c3c;
+  }
+  
+  .progress-bar {
+    margin-top: 25px;
+    background: #f3f3f3;
+    border-radius: 50px;
+    height: 10px;
+    position: relative;
+  }
+  
+  .progress {
+    background: linear-gradient(to right, #d4af37, #f4e5c2);
+    height: 100%;
+    border-radius: 50px;
+  }
+  
+  .progress-bar span {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #d4af37;
+    font-weight: 600;
+  }
+  
+  .item-count {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #d4af37;
+    font-weight: 600;
+  }
+  
+  .registry-note {
+    margin-top: 40px;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .registry-note i {
+    color: #d4af37;
+    margin-right: 8px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .registry-options {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .gift-option {
+      max-width: 100%;
+    }
+  }
+
+  /* Cash Gift Fund Styles */
+.cash-fund {
+    border-top: 5px solid #d4af37;
+    background: linear-gradient(135deg, #fffaf0 0%, #fff 100%);
+  }
+  
+  .cash-fund .gift-icon {
+    color: #d4af37;
+    text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+  }
+  
+  .payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .payment-method {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: #555;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .payment-method:hover {
+    background: #d4af37;
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  /* Ensure Font Awesome is included for icons */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

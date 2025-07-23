@@ -6,6 +6,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
+@font-face {
+    font-family: 'Amsterdam 2';
+    src: url('fonts/amsterdam2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #F9F3EF;
     line-height: 1.6;
@@ -122,7 +129,7 @@ a:hover {
 
 /* Logo Styling */
 .logo {
-    font-family: 'Great Vibes', cursive; /* Use the same font as h1 */
+    font-family: 'Amsterdam 2', cursive; /* Use the same font as h1 */
     font-size: 4rem; /* Fixed size for emphasis */
     color: var(--gold); /* Gold color for elegance */
     position: relative;
@@ -167,7 +174,8 @@ a:hover {
     margin-left: 70px;
     color: var(--dark);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 

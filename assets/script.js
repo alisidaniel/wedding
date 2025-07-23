@@ -75,3 +75,50 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the first active slide
     updateSlides();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Countdown Timer Script
+const weddingDate = new Date("July 30, 2026 15:00:00").getTime();
+
+const countdown = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+  
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+  document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+  document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+  document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+  
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.querySelector(".countdown-timer").innerHTML = "<div class='countdown-ended'>We're married!</div>";
+  }
+}, 1000);
+
+// RSVP Buttons (example functionality)
+document.querySelectorAll('.rsvp-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const response = this.classList.contains('attending') ? 'attending' : 'not attending';
+    alert(`Thank you for your response! We've recorded you as ${response}.`);
+    // In real implementation, connect to your backend/database
+  });
+});
