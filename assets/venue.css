@@ -1,201 +1,406 @@
-/* Venue Section Styles */
-.venue-section {
-    padding: 100px 20px;
-    background: #fff9f5;
-    position: relative;
-    overflow: hidden;
+/* Elegant Venue Section */
+.venue-section-elegant {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fefefe 0%, #f9f7f7 100%);
+  position: relative;
+}
+
+.venue-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Wedding Date Header */
+.wedding-date-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.date-circle {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #d4af37, #f4e6c3);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.date-circle::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+}
+
+.date-day {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.date-month {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.date-year {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.date-text h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.date-text p {
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Venue Cards */
+.venue-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.venue-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.venue-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  padding: 25px 30px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.venue-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #d4af37, #f4e6c3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.card-header h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  flex: 1;
+}
+
+.ceremony-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d4af37;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.venue-image {
+  height: 250px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  margin: 20px 30px 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 100%);
+}
+
+.reception-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(212, 175, 55, 0.95);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.venue-details {
+  padding: 25px 30px 30px;
+}
+
+.venue-details h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.venue-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.venue-info {
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.info-item i {
+  color: #d4af37;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.info-text {
+  display: block;
+  color: #333;
+  font-weight: 500;
+}
+
+.venue-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.directions-btn {
+  background: #d4af37;
+  color: white;
+}
+
+.directions-btn:hover {
+  background: #c19b2e;
+  transform: translateY(-2px);
+}
+
+.save-btn {
+  background: transparent;
+  border: 2px solid #e0e0e0;
+  color: #666;
+}
+
+.save-btn:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* Wedding Timeline */
+.wedding-timeline {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wedding-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #d4af37, #f4e6c3);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-time {
+  width: 60px;
+  text-align: center;
+  font-weight: 600;
+  color: #d4af37;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #d4af37;
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .venue-cards {
+      grid-template-columns: 1fr;
+      gap: 30px;
   }
   
-  .section-header {
-    text-align: center;
-    margin-bottom: 60px;
+  .wedding-date-header {
+      flex-direction: column;
+      gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .venue-section-elegant {
+      padding: 60px 20px;
   }
   
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #222;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
-  
-  .divider {
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(to right, #d4af37, #f4e5c2);
-    margin: 0 auto;
-  }
-  
-  /* Wedding Date & Countdown */
-  .wedding-date {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
-  }
-  
-  .date-box {
-    background: white;
-    border-radius: 15px;
-    padding: 30px 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    text-align: center;
-    min-width: 180px;
+  .date-circle {
+      width: 120px;
+      height: 120px;
   }
   
   .date-day {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #d4af37;
-    line-height: 1;
+      font-size: 2rem;
   }
   
-  .date-month {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #333;
-    margin: 5px 0;
+  .date-text h2 {
+      font-size: 2.5rem;
   }
   
-  .date-year {
-    font-size: 1.2rem;
-    color: #666;
-    letter-spacing: 3px;
+  .venue-actions {
+      flex-direction: column;
   }
   
-  .countdown-box {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    min-width: 400px;
-  }
-  
-  .countdown-title {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-    font-style: italic;
-  }
-  
-  .countdown-timer {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-  }
-  
-  .countdown-item {
-    text-align: center;
-    flex: 1;
-  }
-  
-  .number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 5px;
-  }
-  
-  .label {
-    font-size: 0.9rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  /* Venue Cards */
-  .venue-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 60px;
-    flex-wrap: wrap;
-  }
-  
-  .venue-card {
-    flex: 1;
-    min-width: 350px;
-    max-width: 500px;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease;
-  }
-  
-  .venue-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .venue-image {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
-  
-  .venue-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  .card-header {
+      padding: 20px 25px 0;
   }
   
   .venue-details {
-    padding: 30px;
-    position: relative;
+      padding: 20px 25px 25px;
   }
   
-  .venue-icon {
-    position: absolute;
-    top: -30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  .venue-image {
+      margin: 15px 25px 0;
+      height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .date-text h2 {
+      font-size: 2rem;
   }
   
-  .venue-details h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #222;
-    margin-bottom: 10px;
+  .card-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
   }
   
-  .venue-name {
-    font-size: 1.1rem;
-    color: #d4af37;
-    font-weight: 600;
-    margin-bottom: 20px;
+  .timeline-item {
+      flex-direction: column;
+      gap: 15px;
   }
   
-  .venue-time, .venue-address {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    color: #555;
+  .wedding-timeline::before {
+      left: 15px;
   }
   
-  .venue-time i, .venue-address i {
-    color: #d4af37;
+  .timeline-time {
+      width: auto;
+      text-align: left;
+      padding-left: 10px;
   }
+}
+
+
+
+
   
   .map-link {
     display: inline-flex;
@@ -213,87 +418,392 @@
     transform: translateX(5px);
   }
   
-  /* RSVP Section */
+ 
+
   .rsvp-section {
-    max-width: 600px;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #fefefe 0%, #f9f7f7 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.rsvp-container {
+    max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+}
+
+.rsvp-header {
     text-align: center;
-    padding: 40px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  }
-  
-  .rsvp-section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #222;
-    margin-bottom: 10px;
-  }
-  
-  .rsvp-section p {
+    margin-bottom: 60px;
+}
+
+.rsvp-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.rsvp-subtitle {
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 30px;
-  }
-  
-  .rsvp-buttons {
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.gold-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4e6c3, #d4af37);
+    margin: 0 auto;
+}
+
+/* RSVP Content Layout */
+.rsvp-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Decorative Side */
+.rsvp-decoration {
+    position: relative;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .rsvp-btn {
-    padding: 15px 30px;
-    border-radius: 50px;
+    align-items: center;
+}
+
+.decoration-flower {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #d4af37, #f4e6c3);
+    border-radius: 50%;
+    opacity: 0.1;
+    position: relative;
+}
+
+.decoration-flower::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(212, 175, 55, 0.2);
+    border-radius: 50%;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center center;
+    opacity: 0.1;
+    animation: floatHeart 8s linear infinite;
+}
+
+.heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+.heart:nth-child(3) { top: 80%; left: 20%; animation-delay: 4s; }
+.heart:nth-child(4) { top: 30%; left: 70%; animation-delay: 6s; }
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.1; }
+    90% { opacity: 0.1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.rsvp-quote {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid #d4af37;
+}
+
+.rsvp-quote p {
+    font-style: italic;
+    color: #666;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.rsvp-quote i {
+    color: #d4af37;
+    font-size: 1.2rem;
+}
+
+/* Form Styles */
+.rsvp-form-container {
+    position: relative;
+}
+
+.rsvp-form {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-label i {
+    color: #d4af37;
+    width: 16px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #999;
+}
+
+/* Select Styling */
+.form-select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+}
+
+/* Input Decorations */
+.input-decoration,
+.textarea-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4e6c3);
+    transition: width 0.3s ease;
+}
+
+.form-input:focus ~ .input-decoration,
+.form-textarea:focus ~ .textarea-decoration {
+    width: 100%;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 18px 30px;
+    background: linear-gradient(135deg, #d4af37, #c19b2e);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: none;
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     position: relative;
     overflow: hidden;
-    background: var(--gold);
-    color: white;
-  }
-  
-  #confetti-canvas {
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    background: linear-gradient(135deg, #c19b2e, #b08c26);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+.submit-btn.loading .btn-text,
+.submit-btn.loading .btn-icon {
+    opacity: 0;
+}
+
+.submit-btn.loading .btn-spinner {
+    opacity: 1;
+}
+
+.btn-spinner {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Confirmation Message */
+.confirmation-message {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-  }
-  
-  .rsvp-btn.clicked {
-    background: #28a745 !important;
-    transform: scale(0.98);
-    transition: all 0.3s ease;
-  }
-  
-  .rsvp-btn i.fa-check {
-    margin-right: 8px;
-  }
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
 
-  
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .wedding-date {
-      flex-direction: column;
-      gap: 30px;
+.confirmation-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.confirmation-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.confirmation-content i {
+    font-size: 4rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.confirmation-content h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.confirmation-content p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.confirmation-details {
+    color: #888;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* RSVP Footer */
+.rsvp-footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.rsvp-info {
+    display: inline-flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.info-item i {
+    color: #d4af37;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rsvp-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
     
-    .countdown-box {
-      min-width: 100%;
+    .rsvp-title {
+        font-size: 2.8rem;
     }
     
-    .countdown-timer {
-      gap: 10px;
+    .rsvp-form {
+        padding: 30px 25px;
     }
     
-    .venue-card {
-      min-width: 100%;
+    .rsvp-info {
+        flex-direction: column;
+        gap: 20px;
     }
-  }
+    
+    .decoration-flower {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rsvp-title {
+        font-size: 2.2rem;
+    }
+    
+    .rsvp-form {
+        padding: 25px 20px;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 12px 15px;
+    }
+}

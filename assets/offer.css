@@ -329,3 +329,349 @@
       min-height: 400px;
     }
   }
+
+
+
+
+
+
+  .coimbra-guide-compact {
+    position: relative;
+    padding: 80px 20px;
+    color: #333;
+    overflow: hidden;
+}
+
+.coimbra-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/images/coimbra/coimbra-city.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -2;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(249,247,247,0.98) 100%);
+    z-index: -1;
+}
+
+.guide-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.guide-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.guide-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.guide-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.gold-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4e6c3, #d4af37);
+    margin: 0 auto;
+}
+
+/* Side by Side Layout */
+.guide-content-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.guide-column {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.column-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d4af37, #f4e6c3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-icon i {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.column-header h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Compact List Items */
+.compact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.compact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.compact-item:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgba(212, 175, 55, 0.2);
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.item-badge {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: white;
+    z-index: 2;
+}
+
+.item-badge.luxury { background: #d4af37; }
+.item-badge.boutique { background: #e91e63; }
+.item-badge.comfort { background: #2196f3; }
+.item-badge.budget { background: #4caf50; }
+
+.item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-content h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.item-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.item-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item-time,
+.item-price,
+.item-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 500;
+}
+
+.item-rating i,
+.item-time i,
+.item-price i {
+    color: #d4af37;
+    font-size: 0.7rem;
+}
+
+.item-features {
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.feature {
+    color: #d4af37;
+    font-size: 0.8rem;
+}
+
+.item-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #d4af37;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.item-link:hover {
+    background: #c19b2e;
+    transform: scale(1.1);
+}
+
+/* Compact Transport */
+.compact-transport {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.transport-tip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-weight: 500;
+}
+
+.transport-tip i {
+    color: #d4af37;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .guide-content-side {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .guide-column {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .coimbra-guide-compact {
+        padding: 60px 20px;
+    }
+    
+    .guide-title {
+        font-size: 2.5rem;
+    }
+    
+    .compact-item {
+        padding: 15px;
+    }
+    
+    .item-image {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .item-content h4 {
+        font-size: 1rem;
+    }
+    
+    .item-description {
+        font-size: 0.85rem;
+    }
+    
+    .compact-transport {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .guide-title {
+        font-size: 2rem;
+    }
+    
+    .column-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .compact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .item-meta {
+        justify-content: center;
+    }
+    
+    .item-link {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .item-image {
+        width: 100%;
+        height: 120px;
+    }
+}

@@ -1,234 +1,439 @@
-/* Gift Registry Section */
-.gift-registry {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 40px 20px;
-    text-align: center;
-    background: #fff9f7;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  }
-  
-  .registry-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .registry-header p {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 700px;
-    margin: 0 auto 30px;
-  }
-  
-  .divider {
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, #d4af37, #f4e5c2);
-    margin: 25px auto;
-  }
-  
-  .registry-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 50px 0;
-  }
-  
-  .gift-option {
-    flex: 1;
-    min-width: 300px;
-    max-width: 350px;
-    padding: 30px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .gift-option:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
-  }
-  
-  .gift-option::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, #d4af37, #f4e5c2);
-  }
-  
-  .gift-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-  }
-  
-  .gift-option h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .gift-option p {
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .gift-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #d4af37;
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid #d4af37;
-  }
-  
-  .gift-btn:hover {
-    background: #b38b2d;
-    border-color: #b38b2d;
-    transform: translateY(-2px);
-  }
-  
-  /* Special Elements for Each Option */
-  .honeymoon-fund {
-    border-top: 5px solid #4a90e2;
-  }
-  
-  .amazon-registry {
-    border-top: 5px solid #ff9900;
-  }
-  
-  .charity-fund {
-    border-top: 5px solid #e74c3c;
-  }
-  
-  .progress-bar {
-    margin-top: 25px;
-    background: #f3f3f3;
-    border-radius: 50px;
-    height: 10px;
-    position: relative;
-  }
-  
-  .progress {
-    background: linear-gradient(to right, #d4af37, #f4e5c2);
-    height: 100%;
-    border-radius: 50px;
-  }
-  
-  .progress-bar span {
-    position: absolute;
-    top: -25px;
-    left: 0;
-    width: 100%;
-    font-size: 0.9rem;
-    color: #d4af37;
-    font-weight: 600;
-  }
-  
-  .item-count {
-    margin-top: 25px;
-    font-size: 0.9rem;
-    color: #d4af37;
-    font-weight: 600;
-  }
-  
-  .registry-note {
-    margin-top: 40px;
-    font-style: italic;
-    color: #666;
-  }
-  
-  .registry-note i {
-    color: #d4af37;
-    margin-right: 8px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .registry-options {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .gift-option {
-      max-width: 100%;
-    }
-  }
+/* Gift Section Styles */
+.gift-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fefefe 0%, #f9f7f7 100%);
+  position: relative;
+}
 
-  /* Cash Gift Fund Styles */
-.cash-fund {
-    border-top: 5px solid #d4af37;
-    background: linear-gradient(135deg, #fffaf0 0%, #fff 100%);
+.gift-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gift-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gift-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.gift-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 25px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Gift Options */
+.gift-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.gift-option {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #f4e6c3, #d4af37);
+}
+
+.gift-option:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gift-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #d4af37, #f4e6c3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.gift-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.gift-content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.gift-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin: 25px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d4af37, #f4e6c3);
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Registry Stats */
+.registry-stats {
+  display: flex;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Payment Options */
+.payment-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #666;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.payment-method:hover {
+  background: #e8e8e8;
+  transform: translateY(-2px);
+}
+
+.payment-method i {
+  color: #d4af37;
+  font-size: 1.1rem;
+}
+
+/* Gift Buttons */
+.gift-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.gift-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.primary-btn {
+  background: #d4af37;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #c19b2e;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid #e0e0e0;
+  color: #666;
+}
+
+.secondary-btn:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+  transform: translateY(-2px);
+}
+
+.contribute-btn {
+  background: linear-gradient(135deg, #d4af37, #c19b2e);
+  color: white;
+}
+
+.contribute-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Traditional Gifts */
+.traditional-gifts {
+  margin-bottom: 60px;
+}
+
+.traditional-gifts h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.traditional-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.traditional-item {
+  text-align: center;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.traditional-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.traditional-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #d4af37, #f4e6c3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.traditional-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.traditional-item h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.traditional-item p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Gift Message */
+.gift-message {
+  background: linear-gradient(135deg, #d4af37, #f4e6c3);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-message::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+}
+
+.message-content {
+  position: relative;
+  z-index: 1;
+}
+
+.message-content i {
+  font-size: 2rem;
+  opacity: 0.7;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.message-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.message-signature {
+  font-size: 1.1rem;
+}
+
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  display: block;
+  margin-top: 5px;
+}
+
+/* FAQ Section */
+.gift-faq {
+  margin-bottom: 40px;
+}
+
+.gift-faq h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.faq-item {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #d4af37;
+}
+
+.faq-item h4 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gift-options {
+      grid-template-columns: 1fr;
   }
   
-  .cash-fund .gift-icon {
-    color: #d4af37;
-    text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+  .gift-title {
+      font-size: 2.8rem;
   }
   
   .payment-options {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
+      grid-template-columns: 1fr;
   }
   
-  .payment-method {
-    width: 32px;
-    height: 32px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    color: #555;
-    font-size: 14px;
-    transition: all 0.3s ease;
+  .gift-actions {
+      flex-direction: column;
   }
   
-  .payment-method:hover {
-    background: #d4af37;
-    color: white;
-    transform: translateY(-3px);
+  .registry-stats {
+      gap: 10px;
   }
   
-  /* Ensure Font Awesome is included for icons */
-  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .traditional-grid {
+      grid-template-columns: 1fr;
+  }
   
+  .gift-message {
+      padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gift-title {
+      font-size: 2.2rem;
+  }
+  
+  .gift-option {
+      padding: 25px 20px;
+  }
+  
+  .faq-grid {
+      grid-template-columns: 1fr;
+  }
+}

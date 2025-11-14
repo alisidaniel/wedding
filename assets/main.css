@@ -16,13 +16,13 @@
 body {
     background-color: #F9F3EF;
     line-height: 1.6;
-    font-family: 'Poppins', sans-serif; /* Stylish and clean font for body text */
+    font-family: 'Poppins', sans-serif; 
     color: #333;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
-    font-family: 'Great Vibes', cursive; /* Elegant font for headings */
+    font-family: 'Great Vibes', cursive; 
     color: var(--gold);
 }
 
@@ -275,7 +275,7 @@ a:hover {
     border-radius: 3px;
 }
 
-/* Enhanced Image Layers */
+/* Enhanced Image Layers with Slower Animations */
 .banner-image {
     flex: 1;
     min-width: 50%;
@@ -298,6 +298,8 @@ a:hover {
     transform: rotate(-5deg);
     filter: sepia(10%) brightness(105%) contrast(105%);
     transition: all 0.5s ease;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease 2s forwards;
 }
 
 .square-layered-image:hover {
@@ -312,6 +314,7 @@ a:hover {
     background-size: cover;
     background-position: center;
     transition: all 0.5s ease;
+    opacity: 0;
 }
 
 .layer-1 {
@@ -320,7 +323,8 @@ a:hover {
     z-index: 1;
     transform: rotate(10deg) translate(30px, 30px);
     background: var(--gold-light);
-    opacity: 0.8;
+    opacity: 0;
+    animation: fadeInLayer 1.2s ease 0.5s forwards;
 }
 
 .layer-2 {
@@ -329,7 +333,8 @@ a:hover {
     z-index: 2;
     background: var(--gold);
     transform: rotate(-5deg) translate(-25px, -25px);
-    opacity: 0.6;
+    opacity: 0;
+    animation: fadeInLayer 1.2s ease 1s forwards;
 }
 
 .layer-3 {
@@ -338,8 +343,9 @@ a:hover {
     z-index: 3;
     background: linear-gradient(45deg, var(--gold-light), var(--gold));
     transform: rotate(2deg) translate(15px, 15px);
-    opacity: 0.4;
+    opacity: 0;
     border: 15px solid rgba(255,255,255,0.8);
+    animation: fadeInLayer 1.2s ease 1.5s forwards;
 }
 
 .polaroid-effect {
@@ -356,27 +362,234 @@ a:hover {
     background-size: cover;
     background-position: center;
     filter: brightness(110%);
+    opacity: 0;
+    animation: slideInFromRight 1s ease 2.5s forwards;
 }
+
+/* Slower Animation Keyframes */
+@keyframes fadeInLayer {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) rotate(0deg) scale(0.95);
+    }
+    60% {
+        opacity: 0.4;
+        transform: translateY(-10px) rotate(8deg) scale(1.02);
+    }
+    100% {
+        opacity: 0.8; /* Layer-1 */
+        transform: rotate(10deg) translate(30px, 30px) scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) rotate(-8deg) scale(0.9);
+    }
+    60% {
+        opacity: 0.7;
+        transform: translateY(-15px) rotate(-3deg) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(-5deg) scale(1);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px) rotate(25deg) scale(0.7);
+    }
+    60% {
+        opacity: 0.8;
+        transform: translateX(-10px) rotate(12deg) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(15deg) scale(1);
+    }
+}
+
+/* Layer-specific opacity adjustments after animation */
+.layer-1.animated {
+    opacity: 0.8;
+}
+
+.layer-2.animated {
+    opacity: 0.6;
+}
+
+.layer-3.animated {
+    opacity: 0.4;
+}
+
+/* Alternative: Even slower stack animation */
+@keyframes stackInSlow {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) rotate(0deg) translateY(30px);
+    }
+    40% {
+        opacity: 0.3;
+        transform: scale(1.1) rotate(5deg) translateY(-10px);
+    }
+    70% {
+        opacity: 0.7;
+        transform: scale(0.98) rotate(3deg) translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(var(--final-rotation)) translateY(0);
+    }
+}
+
+/* If you prefer the slower stack animation, use these classes instead: */
+.layer-1.stack-slow {
+    animation: stackInSlow 1.5s ease 0.3s forwards;
+    --final-rotation: 10deg;
+}
+
+.layer-2.stack-slow {
+    animation: stackInSlow 1.5s ease 0.9s forwards;
+    --final-rotation: -5deg;
+}
+
+.layer-3.stack-slow {
+    animation: stackInSlow 1.5s ease 1.5s forwards;
+    --final-rotation: 2deg;
+}
+
+.square-layered-image.stack-slow {
+    animation: stackInSlow 1.5s ease 2.1s forwards;
+    --final-rotation: -5deg;
+}
+
+.polaroid-effect.stack-slow {
+    animation: stackInSlow 1.2s ease 2.8s forwards;
+    --final-rotation: 15deg;
+}
+
+/* Ultra slow version for maximum drama */
+@keyframes ultraSlowFade {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.8) rotate(0deg);
+    }
+    30% {
+        opacity: 0.2;
+        transform: translateY(40px) scale(0.9) rotate(3deg);
+    }
+    60% {
+        opacity: 0.5;
+        transform: translateY(20px) scale(0.95) rotate(6deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(var(--final-rotation));
+    }
+}
+
+.layer-1.ultra-slow {
+    animation: ultraSlowFade 2s ease 0.5s forwards;
+    --final-rotation: 10deg;
+}
+
+.layer-2.ultra-slow {
+    animation: ultraSlowFade 2s ease 1.2s forwards;
+    --final-rotation: -5deg;
+}
+
+.layer-3.ultra-slow {
+    animation: ultraSlowFade 2s ease 1.9s forwards;
+    --final-rotation: 2deg;
+}
+
+.square-layered-image.ultra-slow {
+    animation: ultraSlowFade 2s ease 2.6s forwards;
+    --final-rotation: -5deg;
+}
+
+.polaroid-effect.ultra-slow {
+    animation: ultraSlowFade 1.5s ease 3.3s forwards;
+    --final-rotation: 15deg;
+}
+
+/* Responsive adjustments for slower animations */
+@media (max-width: 768px) {
+    .banner-image {
+        height: 400px;
+    }
+    
+    .square-layered-image,
+    .layer-1,
+    .layer-2,
+    .layer-3 {
+        max-width: 300px;
+        height: 300px;
+    }
+    
+    .polaroid-effect {
+        width: 120px;
+        height: 120px;
+        bottom: -15px;
+        right: -15px;
+    }
+    
+    /* Adjust slower animation distances for mobile */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px) rotate(-5deg) scale(0.9);
+        }
+        60% {
+            opacity: 0.7;
+            transform: translateY(-10px) rotate(-2deg) scale(1.03);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) rotate(-5deg) scale(1);
+        }
+    }
+    
+    @keyframes slideInFromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(50px) rotate(15deg) scale(0.8);
+        }
+        60% {
+            opacity: 0.8;
+            transform: translateX(-5px) rotate(10deg) scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0) rotate(15deg) scale(1);
+        }
+    }
+}
+
 
 /* Enhanced Button with Icon */
 .cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     background: var(--gold);
     color: white;
     padding: 16px 40px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.4s ease;
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-    font-size: 1.1rem;
+    font-size: 0.75rem;
     border: none;
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: 40px;
 }
 
 .cta-btn i {
@@ -387,6 +600,8 @@ a:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(212, 175, 55, 0.6);
     background: var(--gold-dark);
+    color: white;
+    text-decoration: none;
 }
 
 .cta-btn:hover i {
@@ -630,4 +845,164 @@ a:hover {
         border-top-left-radius: 200px;
         border-top-right-radius: 200px;
     }
+}
+
+
+
+
+.horizontal-countdown {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.circle-progress {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-ring-circle {
+    stroke: var(--gold);
+    stroke-dasharray: 194.8; /* 2 * π * r (2 * 3.14159 * 31) */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s ease;
+    stroke-linecap: round;
+}
+
+.circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.circle-number {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 2px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.circle-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Animation for number changes */
+.circle-number {
+    transition: all 0.3s ease;
+}
+
+.circle-number.changing {
+    transform: scale(1.1);
+    color: #d4af37;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .horizontal-countdown {
+        gap: 12px;
+    }
+    
+    .circle-progress {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .circle-number {
+        font-size: 1rem;
+    }
+    
+    .circle-label {
+        font-size: 0.6rem;
+    }
+
+    .progress-ring {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .progress-ring-circle {
+        r: 26;
+        cx: 30;
+        cy: 30;
+        stroke-dasharray: 163.4; /* Updated for smaller radius */
+    }
+}
+
+@media (max-width: 480px) {
+    .horizontal-countdown {
+        gap: 8px;
+    }
+    
+    .circle-progress {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .circle-number {
+        font-size: 0.9rem;
+    }
+    
+    .circle-label {
+        font-size: 0.55rem;
+    }
+
+    .progress-ring {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .progress-ring-circle {
+        r: 21;
+        cx: 25;
+        cy: 25;
+        stroke-dasharray: 132; /* Updated for smaller radius */
+    }
+}
+
+/* Pulse animation for the circles */
+@keyframes pulse-gold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+.countdown-item:hover .circle-progress {
+    animation: pulse-gold 2s infinite;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }

@@ -1,57 +1,285 @@
-/* Portfolio Section */
-.portfolio-section {
-    padding: 60px 20px;
-    background-color: #F9F3EF;
-    text-align: center;
-}
-
-.portfolio-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 20px;
-}
-
-.portfolio-description {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-/* Slider Styles */
-.portfolio-slider {
+/* Wedding Gallery Styles */
+.wedding-gallery {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #fefefe 0%, #f9f7f7 100%);
     position: relative;
-    max-width: 1000px;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.gallery-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.gold-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4e6c3, #d4af37);
     margin: 0 auto;
+}
+
+/* Gallery Navigation */
+.gallery-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 12px 25px;
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Masonry Gallery Layout */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item.portrait {
+    grid-row: span 2;
+}
+
+.gallery-item.landscape {
+    grid-column: span 2;
+}
+
+.gallery-item.square {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .image-wrapper img {
+    transform: scale(1.1);
+}
+
+/* Image Overlay */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.85));
     display: flex;
     align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
 }
 
-.slider-container {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.5s ease-in-out;
+.gallery-item:hover .image-overlay {
+    opacity: 1;
 }
 
-.slide {
-    flex: 0 0 20%; /* Smaller size for inactive slides */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.6; /* Dim inactive slides */
-    transform: scale(0.9); /* Shrink inactive slides */
-    cursor: pointer; /* Add pointer cursor for interactivity */
+.overlay-content {
+    text-align: center;
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
 }
 
-.slide.active {
-    flex: 0 0 40%; /* Larger size for the active slide */
-    opacity: 1; /* Highlight active slide */
-    transform: scale(1); /* Pop out active slide */
+.gallery-item:hover .overlay-content {
+    transform: translateY(0);
 }
 
-.slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.overlay-content h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.overlay-content p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.overlay-content .photo-date {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.overlay-content i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* View More Button */
+.gallery-actions {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.view-more-btn {
+    padding: 15px 40px;
+    background: transparent;
+    border: 2px solid #d4af37;
+    border-radius: 30px;
+    color: #d4af37;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.view-more-btn:hover {
+    background: #d4af37;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* Animation for gallery items */
+.gallery-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+.gallery-item:nth-child(7) { animation-delay: 0.7s; }
+.gallery-item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 15px;
+    }
+    
+    .gallery-item.featured,
+    .gallery-item.landscape {
+        grid-column: span 1;
+    }
+    
+    .gallery-title {
+        font-size: 2.8rem;
+    }
+    
+    .gallery-nav {
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    
+    .gallery-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Loading state for images */
+.gallery-item.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
 }
